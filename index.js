@@ -6,6 +6,7 @@ const bookRoutes = require('./routes/bookRoutes');
 const { verifyToken } = require('./middlewares/authMiddleware');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger/Book-mgmt.json');
+const cors = require('cors');
 const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.3.0/swagger-ui.min.css"
 const config = require('./config'); // Import the configuration
 
@@ -13,7 +14,7 @@ dotenv.config();
 const app = express();
 const PORT = config.port;
 // const PORT = process.env.PORT || 3000;
-
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(config.mongodbUri,{
