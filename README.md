@@ -1,5 +1,10 @@
 # Book Management System
 This Node.js application provides a RESTful API for managing books. It includes user authentication, book publishing, searching, and listing functionalities.
+![Screenshot (11)](https://github.com/pranandv/book-managements-system/assets/50710950/7585282e-d513-46c2-9eee-13325901f901)
+
+![Screenshot (12)](https://github.com/pranandv/book-managements-system/assets/50710950/3498315b-dde9-4d64-9c35-056705b97649)
+
+
 ## Endpoints
 ## User Authentication
 POST /api/auth/signup: Register a new user.  
