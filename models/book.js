@@ -6,7 +6,7 @@ const bookSchema = new mongoose.Schema({
     required: true,
   },
   publishedBy: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     ref: 'User',
   },
 });

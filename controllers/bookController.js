@@ -3,7 +3,7 @@ const Book = require('../models/book');
 exports.publishBook = async (req, res) => {
   try {
     const { title, author, description } = req.body;
-
+console.log(req.user.username)
     const newBook = await Book.create({
       title,
       author,
