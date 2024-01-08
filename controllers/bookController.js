@@ -4,11 +4,12 @@ exports.publishBook = async (req, res) => {
   try {
     const { title, author, description } = req.body;
 
+    console.log("req.user"),req.user
     const newBook = await Book.create({
       title,
       author,
       description,
-      publishedBy: req.user.id, // Assuming the user ID is stored in req.user.id after JWT verification
+      publishedBy: req.user.username, // Assuming the user ID is stored in req.user.id after JWT verification
     });
 
     res.status(201).json({ status:"success",message: 'Book published successfully', data: newBook.title });
