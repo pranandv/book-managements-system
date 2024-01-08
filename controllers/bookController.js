@@ -3,7 +3,7 @@ const Book = require('../models/book');
 exports.publishBook = async (req, res) => {
   try {
     const { title, author, description } = req.body;
-console.log(req.user.username)
+
     const newBook = await Book.create({
       title,
       author,
@@ -41,7 +41,7 @@ exports.unpublishBook = async (req, res) => {
       return res.status(404).json({ status:"fail",message: 'Book not found' });
     }
 
-    if (String(book.publishedBy) !== req.user.id) {
+    if (String(book.publishedBy) !== req.user.username) {
       return res.status(403).json({status:"fail", message: 'Unauthorized to unpublish this book' });
     }
 
@@ -56,7 +56,7 @@ exports.unpublishBook = async (req, res) => {
 // Get a list of books published by the current user
 exports.getUserBooks = async (req, res) => {
   try {
-    console.log("hello ",req.user.username)
+   
     const userBooks = await Book.find({ publishedBy: req.user.username });
 
     res.status(200).json({ status:"success",data: userBooks });
