@@ -56,7 +56,8 @@ exports.unpublishBook = async (req, res) => {
 // Get a list of books published by the current user
 exports.getUserBooks = async (req, res) => {
   try {
-    const userBooks = await Book.find({ publishedBy: req.user.id });
+    console.log("hello ",req.user.username)
+    const userBooks = await Book.find({ publishedBy: req.user.username });
 
     res.status(200).json({ status:"success",data: userBooks });
   } catch (error) {
