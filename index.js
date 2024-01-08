@@ -28,6 +28,7 @@ mongoose.connect(config.mongodbUri,{
 // Routes
 app.get('/', (req, res) => {
   const message = "System is running fine. Test APIs";
+  const url = 'https://book-managements-system.vercel.app/api-docs';
   const htmlResponse = `
     <!DOCTYPE html>
     <html>
@@ -47,7 +48,10 @@ app.get('/', (req, res) => {
       </style>
     </head>
     <body>
-      <div class="message">${message}</div>
+      <div class="message">${message}
+      <br>
+        Click <a href="${url}" class="link" target="_blank">here</a> to access the API documentation (Swagger for testing).
+      </div>
     </body>
     </html>
   `;
