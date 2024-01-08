@@ -1,0 +1,335 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Book mgmt",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/books/publish": {
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "publish",
+        "operationId": "publish",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/publishrequest"
+                  },
+                  {
+                    "example": {
+                      "title": "first bool",
+                      "author": "Author Name",
+                      "description": "Book Description"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "title": "first bool",
+                "author": "Author Name",
+                "description": "Book Description"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/books/search": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "searchbytitle",
+        "operationId": "searchbytitle",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "first"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/books/unpublish/659b62c40e372023fb2bf8aa": {
+      "put": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "unpublish",
+        "operationId": "unpublish",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/books/user": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "getBooksbyusers",
+        "operationId": "getBooksbyusers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/books/published": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "allbooks",
+        "operationId": "allbooks",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "login",
+        "operationId": "login",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/loginrequest"
+                  },
+                  {
+                    "example": {
+                      "username": "user3",
+                      "password": "user3"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "username": "user3",
+                "password": "user3"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/auth/signup": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "signup",
+        "operationId": "signup",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/signuprequest"
+                  },
+                  {
+                    "example": {
+                      "username": "user3",
+                      "password": "user3"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "username": "user3",
+                "password": "user3"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "publishrequest": {
+        "title": "publishrequest",
+        "required": [
+          "title",
+          "author",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "title": "first bool",
+          "author": "Author Name",
+          "description": "Book Description"
+        }
+      },
+      "loginrequest": {
+        "title": "loginrequest",
+        "required": [
+          "username",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "username": "user3",
+          "password": "user3"
+        }
+      },
+      "signuprequest": {
+        "title": "signuprequest",
+        "required": [
+          "username",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "username": "user3",
+          "password": "user3"
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [],
+  "tags": [
+    {
+      "name": "Books"
+    },
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
