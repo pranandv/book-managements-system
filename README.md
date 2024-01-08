@@ -1,6 +1,6 @@
 # Book Management System
 
-This Node.js application provides a RESTful API for managing books. It includes user authentication, book publishing, searching, and listing functionalities.
+This Node.js application provides a RESTful API for managing books. It includes user authentication, book publishing, searching, and listing functionalities.  
 
 ## Endpoints
 ## User Authentication
@@ -18,15 +18,15 @@ GET /api/books/published: Get a list of all published books.
 
 ## Clone the repository:
  ```bash
-   git clone https://github.com/your-username/your-repo.git
-   cd Book-Managment-System
+   git clone https://github.com/your-username/your-repo.git  
+   cd Book-Managment-System  
 
-## Install dependencies:
-npm install
+## Install dependencies:  
+npm install  
 
-## Set up environment variables:
-Create a .env file based on the provided .env.example.
-Add your MongoDB connection string, JWT secret, and other necessary variables.
+## Set up environment variables:  
+Create a .env file based on the provided .env.example.  
+Add your MongoDB connection string, JWT secret, and other necessary variables.  
 
-## Start the server:
-npm start
+## Start the server:  
+npm start  
