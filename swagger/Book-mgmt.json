@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://book-managements-system.vercel.app/api",
+      "url": "http://book-managements-system.vercel.app/api",
       "variables": {}
     }
   ],
