@@ -6,7 +6,7 @@ This Node.js application provides a RESTful API for managing books. It includes 
 
 ### Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repo.git](https://github.com/pranandv/book-managements-system.git
+   git clone https://github.com/pranandv/book-managements-system.git
    cd Book-Managment-System
 
 ### Install dependencies:
