@@ -96,7 +96,7 @@
         ]
       }
     },
-    "/books/unpublish/659b62c40e372023fb2bf8aa": {
+    "/books/unpublish": {
       "put": {
         "tags": [
           "Books"
